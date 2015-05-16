@@ -29,20 +29,20 @@
         <title>Wealth Report</title>
     </head>
     <body>
-        <div class="app" onclick="Open()">
+        <div class="app" onclick="Open()" style="cursor:pointer;">
             <h1>Wealth Report</h1>
             <br />
             <div id="deviceready" class="blink">
                 <p class="event listening">Подключение ...</p>
                 <p class="event received">Подключено</p>
+                <p class="event error">Ошибка подключения</p>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
-
-            window.location = "http://wrpt-dev.azurewebsites.net/"
 
             function Open() {
                 window.location = "http://wrpt-dev.azurewebsites.net/"
