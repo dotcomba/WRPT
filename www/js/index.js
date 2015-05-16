@@ -42,19 +42,30 @@ var app = {
         var receivedElement = parentElement.querySelector('.received');
         var errorElement = parentElement.querySelector('.error');
 
-        listeningElement.setAttribute('style', 'display:none;');
+//        $.ajax({
+//            url: "http://wrpt-dev.azurewebsites.net",
+//            type: 'GET',
+//            cache: false,
+//            async: false,
+//            success: function (data) {
+//                listeningElement.setAttribute('style', 'display:none;');
+//                receivedElement.setAttribute('style', 'display:block;');
+//                window.location = "http://wrpt-dev.azurewebsites.net/";
+//            },
+//            error: function (request, status, error) {
+//                listeningElement.setAttribute('style', 'display:none;');
+//                errorElement.setAttribute('style', 'display:block;');
+//            }
+//        });
 
-        $.ajax({
-            url: "http://wrpt-dev.azurewebsites.net/",
-            type: 'GET',
-            success: function (data) {
-                receivedElement.setAttribute('style', 'display:block;');
-                window.location = "http://wrpt-dev.azurewebsites.net/";
-            },
-            error: function (request, status, error) {
-                errorElement.setAttribute('style', 'display:block;');
-            }
-        });
+        if (navigator.onLine) {
+            listeningElement.setAttribute('style', 'display:none;');
+            receivedElement.setAttribute('style', 'display:block;');
+            window.location = "http://wrpt-dev.azurewebsites.net/";
+        } else {
+            listeningElement.setAttribute('style', 'display:none;');
+            errorElement.setAttribute('style', 'display:block;');
+        }
 
         console.log('Received Event: ' + id);
     }
