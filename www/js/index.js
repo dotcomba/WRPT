@@ -61,7 +61,9 @@ var app = {
         if (navigator.onLine) {
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-            window.location = "http://wrpt-dev.azurewebsites.net/";
+            // window.location = "http://wrpt-dev.azurewebsites.net/";
+		window.location = "Admin/index.html";
+
         } else {
             listeningElement.setAttribute('style', 'display:none;');
             errorElement.setAttribute('style', 'display:block;');
