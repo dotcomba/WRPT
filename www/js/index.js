@@ -62,7 +62,7 @@ var app = {
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
             // window.location = "http://wrpt-dev.azurewebsites.net/";
-		window.location = "Admin/index.html";
+		window.location = "Admin/ix.html";
 
         } else {
             listeningElement.setAttribute('style', 'display:none;');
